@@ -53,6 +53,7 @@ header {
     display: flex;
     align-items: center;
     background-color: var(--main-color);
+    z-index: 1;
 }
 
 .nav-items a {
@@ -91,6 +92,42 @@ header {
   color: rgb(0, 0, 0);
 }
 
+.nav-items a {
+    position: relative;
+}
+  
+.nav-items a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: -7px auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+  
+.nav-items a:hover:after {
+    width: 100%;
+}
+  
+.nav-items a {
+    transition: all 2s;
+}
+  
+.nav-items a:hover {
+    z-index: 1;
+}
+.nav-items a:hover:after {
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+}
+
 @media only screen and (max-width: 1024px) {
     .nav-btn {
         position: relative;
@@ -116,48 +153,4 @@ header {
     .responsive-nav {
         transform: none;
     }
-}
-
-.nav-items a {
-  position: relative;
-}
-
-.nav-items a:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: -7px auto;
-  width: 0%;
-  content: '.';
-  color: transparent;
-  background: #aaa;
-  height: 1px;
-}
-
-.nav-items a:hover:after {
-  width: 100%;
-}
-
-.nav-items a {
-  transition: all 2s;
-}
-
-/* .nav-items a:after {
-  text-align: left;
-  content: '.';
-  margin: 0;
-  opacity: 0;
-} */
-
-.nav-items a:hover {
-  /* color: #fff; */
-  z-index: 1;
-}
-.nav-items a:hover:after {
-  z-index: -10;
-  animation: fill 1s forwards;
-  -webkit-animation: fill 1s forwards;
-  -moz-animation: fill 1s forwards;
-  opacity: 1;
 }
