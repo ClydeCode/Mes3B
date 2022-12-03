@@ -73,7 +73,7 @@ header {
 }
 
 .nav-items a:visited {
-    color: var(--hover-color);
+    visibility: hidden;
 }
 
 .nav-btn {
@@ -132,6 +132,14 @@ header {
     -webkit-animation: fill 1s forwards;
     -moz-animation: fill 1s forwards;
     opacity: 1;
+}
+
+.nav-items .active {
+    color: rgb(0, 0, 0);
+}
+
+.nav-items .active:after {
+    width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
