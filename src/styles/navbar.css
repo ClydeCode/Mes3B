@@ -37,6 +37,9 @@ body {
 
 .logo {
     font-family: 'Roboto';
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 header {
