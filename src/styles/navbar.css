@@ -156,6 +156,10 @@ header {
         height: auto;
     }
 
+    .nav-items a:hover:after {
+        opacity: 0;
+    }
+
     .responsive-nav {
         transform: none;
     }
