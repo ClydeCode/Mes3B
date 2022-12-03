@@ -82,6 +82,7 @@ header {
     outline: none;
     visibility: hidden;
     opacity: 0;
+    color: black;
 }
 
 .nav-items a,
