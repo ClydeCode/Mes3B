@@ -172,6 +172,10 @@ header {
         opacity: 0;
     }
 
+    .nav-items .active:after {
+        width: 0%;
+    }
+
     .responsive-nav {
         transform: none;
     }
