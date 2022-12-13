@@ -1,0 +1,23 @@
+main {
+    padding: 30px 40px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.news-cards {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+}
+
+section h3 {
+    font-family: 'Roboto';
+    color: black;
+    /* font-size: 1.1rem; */
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+    width: 180px;
+    padding-bottom: 10px;
+}
