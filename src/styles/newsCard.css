@@ -18,6 +18,7 @@
     color: black;
     margin-top: 10px;
     padding: 3px 10px;
+    height: 110px;
 }
 
 .news-card-info .date {
@@ -31,5 +32,4 @@
     letter-spacing: .2px;
     color: rgba(0, 0, 0, .5);
     padding: 3px 10px;
-    /* margin-left: 70%; */
 }
