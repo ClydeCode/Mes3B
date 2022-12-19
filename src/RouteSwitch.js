@@ -10,6 +10,7 @@ export default function RouteSwitch() {
             <Routes>
                 <Route path="/" element={<Index />}></Route>
                 <Route path="/Naujienos" element={<News />}></Route>
+                <Route path="/Naujienos/:id" element={<News />}></Route>
                 <Route path="/Klase" element={<Class />}></Route>
                 <Route path="/Apie" element={<About />}></Route>
             </Routes>
