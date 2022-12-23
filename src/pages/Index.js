@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { Fragment } from "react";
 import NewsCard from "../components/NewsCard";
 import '../styles/index.css';
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 export default function Index() {
     return (
@@ -10,7 +11,7 @@ export default function Index() {
             <Navbar />
             <main>
                 <section>
-                    <h3>Naujienos</h3>
+                    <h4>Naujienos</h4>
                     <ul className="news-cards">
                         <NewsCard />
                         <NewsCard />
@@ -21,7 +22,7 @@ export default function Index() {
                     </ul>
                 </section>
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </Fragment>
     )
 }

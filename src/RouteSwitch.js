@@ -3,6 +3,7 @@ import Index from './pages/Index.js';
 import News from './pages/News.js';
 import Class from './pages/Class.js';
 import About from './pages/About.js';
+import Admin from "./pages/Admin.js";
 
 export default function RouteSwitch() {
     return (
@@ -13,6 +14,7 @@ export default function RouteSwitch() {
                 <Route path="/Naujienos/:id" element={<News />}></Route>
                 <Route path="/Klase" element={<Class />}></Route>
                 <Route path="/Apie" element={<About />}></Route>
+                <Route path="/Admin" element={<Admin />} />
             </Routes>
         </BrowserRouter>
     )

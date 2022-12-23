@@ -12,10 +12,10 @@ main {
     padding: 0px 10px;
 }
 
-section h3 {
+section h4 {
     font-family: 'Roboto';
     color: black;
-    /* font-size: 1.1rem; */
+    font-size: 1.2rem;
     margin-bottom: 15px;
     border-bottom: 1px solid black;
     width: 180px;
