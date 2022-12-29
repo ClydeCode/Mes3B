@@ -1,0 +1,8 @@
+.admin-nav a {
+    color: grey;
+    text-decoration: none;
+}
+
+.admin-nav a .active {
+    color: rgb(255, 152, 152);
+}

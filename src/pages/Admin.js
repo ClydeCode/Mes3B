@@ -3,19 +3,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import { NavLink } from "react-router-dom";
+import '../styles/admin.css';
 
 export default function Admin() {
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" className="admin-nav">
                 <Container>
-                    <Navbar.Brand href="#home">Admin Panel</Navbar.Brand>
+                    <Navbar.Brand>Admin Panel</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">News</Nav.Link>
-                        <Nav.Link href="#link">Yearbook</Nav.Link>
+                        <Nav.Link><NavLink to="/Admin/News">News</NavLink></Nav.Link>
+                        <Nav.Link><NavLink to="/Admin/Yearbook">Yearbook</NavLink></Nav.Link>
                     </Nav>
-                        <Nav>
+                    <Nav>
                         <Button variant="danger">Log out</Button>
                     </Nav>
                 </Container>
