@@ -20,10 +20,6 @@ export default function Index() {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        console.log(news);
-    }, [news]);
-
     return (
         <Fragment>
             <Navbar />
