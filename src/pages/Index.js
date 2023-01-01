@@ -32,7 +32,8 @@ export default function Index() {
                                     key={newsItem.id}
                                     title={newsItem.title}
                                     description={newsItem.description}
-                                    imageUrl={newsItem.image} />
+                                    imagePath={newsItem.imagePath}
+                                    createdDate={newsItem.createdDate}/>
                         })}
                     </ul>
                 </section>

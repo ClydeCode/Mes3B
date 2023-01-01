@@ -1,21 +1,18 @@
 import '../styles/newsCard.css';
 import { MdOutlineUpdate } from "react-icons/md";
 
-export default function NewsCard() {
+export default function NewsCard(props) {
     return (
         <li className='news-card'>
-            <img src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg' alt=''></img>
+            <img src={props.imagePath} alt=''></img>
             <p>
-                Sukurtas naujas fotoaparatas. Kuris gali fotografuoti 4k raiska.
-                Kuris gali fotografuoti 4k raiska.
-                Kuris gali fotografuoti 4k raiska.
-                Kuris gali fotografuoti 4k raiska.
-                Kuris gali fotografuoti 4k raiska [...]
+                {props.description}
+                {props.description.length > 75 && "[...]"}
             </p>
             <div className='news-card-info'>
                 <div className='date'>
-                    <MdOutlineUpdate />    
-                    2022-12-22
+                    <MdOutlineUpdate />
+                    {props.createdDate}
                 </div>
             </div>
         </li>
