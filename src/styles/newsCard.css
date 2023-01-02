@@ -9,7 +9,7 @@
 }
 
 .news-card p {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: .8rem;
     line-height: 1.2rem;
     letter-spacing: .2px;
@@ -18,6 +18,7 @@
     padding: 3px 10px;
     height: 120px;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .news-card-body {
@@ -30,7 +31,7 @@
     align-items: center;
     justify-content: right;
     gap: 2px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: .8rem;
     line-height: 1.2rem;
     letter-spacing: .2px;
