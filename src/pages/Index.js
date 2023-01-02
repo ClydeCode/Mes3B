@@ -11,14 +11,17 @@ export default function Index() {
     const fetchData = () => {
         return fetch(process.env.REACT_APP_WEBAPI + "news")
             .then((response) => response.json())
-            .then((data) => {
-                setNews(data.splice(data.length - 6, data.length))
-            })
+            .then((data) => setNews(data));
     }
 
     useEffect(() => {
         fetchData();
     }, []);
+
+    useEffect(() => {
+        if (news.length > 6)
+            setNews(news.slice(news.length - 6, news.length))
+    }, [news]);
 
     return (
         <Fragment>
