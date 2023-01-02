@@ -2,9 +2,8 @@ import '../styles/newsCard.css';
 import { MdOutlineUpdate } from "react-icons/md";
 
 export default function NewsCard(props) {
-    const showShortDate = () => {
-        const date = props.createdDate;
-        return date.substring(0, date.length - 9)
+    const showShortVersion = (prop, number) => {
+        return prop.substring(0, number)
     }
 
     return (
@@ -12,13 +11,16 @@ export default function NewsCard(props) {
             <img src={props.imagePath} alt=''></img>
             <div className='news-card-body'>
                 <p>
-                    {props.description}
-                    {props.description.length > 75 && "[...]"}
+                    <h5>{props.title}</h5>
+                    {props.description.length < 100
+                        ? props.description
+                        : showShortVersion(props.description, 165) + "..."
+                    }
                 </p>
                 <div className='news-card-info'>
                     <div className='date'>
                         <MdOutlineUpdate />
-                        {showShortDate()}
+                        {showShortVersion(props.createdDate, 10)}
                     </div>
                 </div>
             </div>
