@@ -1,7 +1,20 @@
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import {useEffect, useState} from "react";
 
 export default function AdminTable() {
+    const [news, setNews] = useState([]);
+
+    const fetchData = () => {
+        return fetch(process.env.REACT_APP_WEBAPI + "news")
+            .then((response) => response.json())
+            .then((data) => setNews(data));
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
     return (
         <div className="px-5 py-3">
             <Table striped bordered hover>
@@ -14,15 +27,17 @@ export default function AdminTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>
-                            <Button size="sm">Edit</Button>{' '}
-                            <Button variant="danger" size="sm">Delete</Button>
-                        </td>
-                    </tr>
+                    {news.map(newsItem => {
+                        return <tr>
+                            <td>{newsItem.id}</td>
+                            <td>{newsItem.title}</td>
+                            <td>{newsItem.description.substring(0, 200)}</td>
+                            <td>
+                                <Button size="sm">Edit</Button>{' '}
+                                <Button variant="danger" size="sm">Delete</Button>
+                            </td>
+                        </tr>
+                    })}
                 </tbody>
             </Table>
         </div>
