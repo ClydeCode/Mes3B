@@ -8,6 +8,7 @@ export default function EditAdminModal(props) {
     const [show, setShow] = useState(false);
     const [title, setTitle] = useState(props.data.title);
     const [description, setDescription] = useState(props.data.description)
+    const [image, setImage] = useState();
 
     const handleClick = () => setShow(!show);
 
@@ -19,8 +20,13 @@ export default function EditAdminModal(props) {
                id: props.data.id,
                title: title,
                description: description,
-               imagePath: props.data.imagePath
-            });
+               createdDate: props.data.createdDate,
+               file: image
+            },{
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
 
             window.location.reload();
 
@@ -45,6 +51,7 @@ export default function EditAdminModal(props) {
                             <Form.Label>Image</Form.Label>
                             <Form.Control
                                 type="file"
+                                onChange={(e) => setImage(e.target.files[0])}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
