@@ -1,7 +1,7 @@
-import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import {useEffect, useState} from "react";
 import EditAdminModal from "./EditAdminModal";
+import DeleteAdminModal from "./DeleteAdminModal";
 
 export default function AdminTable() {
     const [news, setNews] = useState([]);
@@ -34,8 +34,8 @@ export default function AdminTable() {
                             <td>{newsItem.title}</td>
                             <td>{newsItem.description.substring(0, 200)}</td>
                             <td>
-                                {<EditAdminModal data={newsItem}/>}
-                                <Button variant="danger" size="sm">Delete</Button>
+                                {<EditAdminModal item={newsItem}/>}
+                                {<DeleteAdminModal item={newsItem}/>}
                             </td>
                         </tr>
                     })}

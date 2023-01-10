@@ -12,13 +12,12 @@ export default function DeleteAdminModal(props) {
         e.preventDefault();
 
         try {
-            axios.delete(process.env.REACT_APP_WEBAPI + `News/${props.data.id}`);
+            axios.delete(process.env.REACT_APP_WEBAPI + `News/${props.item.id}`);
 
             window.location.reload();
         } catch (err) {
             console.log(err);
         }
-
     }
 
     return (

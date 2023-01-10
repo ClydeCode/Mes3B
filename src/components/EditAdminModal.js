@@ -16,20 +16,18 @@ export default function EditAdminModal(props) {
         e.preventDefault();
 
         try {
-            await axios.put(process.env.REACT_APP_WEBAPI + `News/${props.data.id}`, {
-               id: props.data.id,
+            await axios.put(process.env.REACT_APP_WEBAPI + `News/${props.item.id}`, {
+               id: props.item.id,
                title: title,
                description: description,
-               createdDate: props.data.createdDate,
+               createdDate: props.item.createdDate,
                file: image
             },{
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             })
-
             window.location.reload();
-
         } catch (err) {
             console.log(err);
         }
