@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import {useEffect, useState} from "react";
+import EditAdminModal from "./EditAdminModal";
 
 export default function AdminTable() {
     const [news, setNews] = useState([]);
@@ -33,7 +34,7 @@ export default function AdminTable() {
                             <td>{newsItem.title}</td>
                             <td>{newsItem.description.substring(0, 200)}</td>
                             <td>
-                                <Button size="sm">Edit</Button>{' '}
+                                {<EditAdminModal data={newsItem}/>}
                                 <Button variant="danger" size="sm">Delete</Button>
                             </td>
                         </tr>
