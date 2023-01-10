@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import axios, * as others from 'axios';
 
 export default function EditAdminModal(props) {
     const [show, setShow] = useState(false);
@@ -14,19 +15,11 @@ export default function EditAdminModal(props) {
         e.preventDefault();
 
         try {
-            await fetch(process.env.REACT_APP_WEBAPI + `News/${props.data.id}`, {
-                method: "PUT",
-                headers: {
-                    'Accept': 'application/json, text/plain',
-                    'Content-Type': 'application/json;charset=UTF-8'
-                },
-                body: JSON.stringify({
-                    id: props.data.id,
-                    title: title,
-                    description: description,
-                    imagePath: props.data.imagePath,
-                    createdDate: props.data.createdDate
-                }),
+            await axios.put(process.env.REACT_APP_WEBAPI + `News/${props.data.id}`, {
+               id: props.data.id,
+               title: title,
+               description: description,
+               imagePath: props.data.imagePath
             });
 
             window.location.reload();
