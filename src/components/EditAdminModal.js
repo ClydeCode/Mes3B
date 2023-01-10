@@ -6,8 +6,8 @@ import axios, * as others from 'axios';
 
 export default function EditAdminModal(props) {
     const [show, setShow] = useState(false);
-    const [title, setTitle] = useState(props.data.title);
-    const [description, setDescription] = useState(props.data.description)
+    const [title, setTitle] = useState(props.item.title);
+    const [description, setDescription] = useState(props.item.description)
     const [image, setImage] = useState();
 
     const handleClick = () => setShow(!show);
