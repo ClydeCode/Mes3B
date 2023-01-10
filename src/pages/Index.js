@@ -16,12 +16,10 @@ export default function Index() {
 
     useEffect(() => {
         fetchData();
-    }, []);
 
-    useEffect(() => {
         if (news.length > 6)
             setNews(news.slice(news.length - 6, news.length))
-    }, [news]);
+    }, []);
 
     return (
         <Fragment>
