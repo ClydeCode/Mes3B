@@ -4,14 +4,14 @@ import {Fragment, useState, useEffect} from "react";
 import NewsCard from "../components/NewsCard";
 import '../styles/index.css';
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
+import axios, * as others from 'axios';
 
 export default function Index() {
     const [news, setNews] = useState([]);
 
     const fetchData = () => {
-        return fetch(process.env.REACT_APP_WEBAPI + "news")
-            .then((response) => response.json())
-            .then((data) => setNews(data));
+        return axios.get(process.env.REACT_APP_WEBAPI + "news")
+            .then((response) => setNews(response.data));
     }
 
     useEffect(() => {
