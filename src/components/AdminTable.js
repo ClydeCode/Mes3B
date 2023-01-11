@@ -2,14 +2,14 @@ import Table from 'react-bootstrap/Table';
 import {useEffect, useState} from "react";
 import EditAdminModal from "./EditAdminModal";
 import DeleteAdminModal from "./DeleteAdminModal";
+import axios, * as others from 'axios';
 
 export default function AdminTable() {
     const [news, setNews] = useState([]);
 
     const fetchData = () => {
-        return fetch(process.env.REACT_APP_WEBAPI + "news")
-            .then((response) => response.json())
-            .then((data) => setNews(data));
+        return axios.get(process.env.REACT_APP_WEBAPI + "News")
+            .then((response) => setNews(response.data));
     }
 
     useEffect(() => {
