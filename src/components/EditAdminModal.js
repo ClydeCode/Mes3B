@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -8,29 +8,37 @@ export default function EditAdminModal(props) {
     const [show, setShow] = useState(false);
     const [title, setTitle] = useState(props.item.title);
     const [description, setDescription] = useState(props.item.description)
-    const [image, setImage] = useState();
+    const [image, setImage] = useState(null);
 
     const handleClick = () => setShow(!show);
 
     const handleSubmitForm = async (e) => {
         e.preventDefault();
 
+        let config;
+        let URL = process.env.REACT_APP_WEBAPI + `News/${props.item.id}/`;
+
+        if (image !== null) {
+            config = { headers: { 'Content-Type': 'multipart/form-data'} };
+            URL += "withimage";
+        }
+
         try {
-            await axios.put(process.env.REACT_APP_WEBAPI + `News/${props.item.id}`, {
+            await axios.put(URL, {
                id: props.item.id,
                title: title,
                description: description,
                createdDate: props.item.createdDate,
+               imagePath: props.item.imagePath,
                file: image
-            },{
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
+            }, config)
+
             window.location.reload();
+
         } catch (err) {
             console.log(err);
         }
+        setImage(null);
     }
 
     return (
